@@ -1,11 +1,10 @@
 version: 2.1
 
 orbs:
- percy: percy/agent@0.1.3
+ percy: percy/agent@volatile
 
 jobs:
  run_tests:
-   parallelism: 3
    steps:
      - attach_workspace:
          at: .
@@ -14,7 +13,8 @@ jobs:
 workflows:
  test:
    jobs:
-     - run_tests
+     - run_tests:
+         parallelism: 3
      - percy/finalize_all:
          requires:
            - run_tests
