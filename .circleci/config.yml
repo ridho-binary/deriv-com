@@ -6,13 +6,10 @@ defaults: &defaults
   working_directory: ~/repo
 
 jobs:
-  # install: ...
-
-  # lint: ...
 
   visual:
     - image: circleci/ruby:2.6.2-node-browsers
-    working_directory: ~/repo
+  working_directory: ~/repo
 
     steps:
       - checkout
