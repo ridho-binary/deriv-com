@@ -162,7 +162,17 @@ jobs:
       - git_checkout_from_cache
       - npm_install_from_cache
       - npm_test
+      - run:
+         name: install dependencies
+         command: |
+              npm install
+              gem install percy-cli
       - build
+      -  run:
+          name: Run Visual Test
+          command: |
+            npm run build
+            percy snapshot public
 
   release_staging:
     docker:
