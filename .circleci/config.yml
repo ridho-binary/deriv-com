@@ -1,5 +1,10 @@
 version: 2.1
 
+default: &default
+  docker:
+    - image: selenium/standalone-chrome
+  working_directory: ~/repo
+
 orbs:
  percy: percy/agent@0.1.2
 
