@@ -1,9 +1,8 @@
-version: 2.1
-
-orbs:
- percy: percy/agent@0.1.2
-
+version: 2
 jobs:
+ build:
+ docker:
+   - image : circleci/ruby:2.4.1-node-browsers
  run_tests:
    parallelism: 3
 
